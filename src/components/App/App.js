@@ -11,26 +11,41 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Feedback!</h1>
-          <h4><i>Don't forget it!</i></h4>
-        </header>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">Feedback!</h1>
+            <h4><i>Don't forget it!</i></h4>
+          </header>
+          <br />
+        </div>
+        {/* FIX: To test the pages from DOM */}
+        <Link to="/">Test First Page</Link>
         <br />
-      </div>
-      {/* FIX: To test the pages from DOM */}
-      <Link to="/">Test First Page</Link>
-      <br/>
-      <Link to="/second">Test Second Page</Link>
-      <br/>
-      <Link to="/third">Test Third Page</Link>
-      <br/>
-      <Link to="/fourth">Test Fourth Page</Link>
+        <Link to="/second">Test Second Page</Link>
+        <br />
+        <Link to="/third">Test Third Page</Link>
+        <br />
+        <Link to="/fourth">Test Fourth Page</Link>
+        <br />
 
-      <Route exact path="/" component={FirstPage}/>
-      <Route exact path="/second" component={SecondPage}/>
-      <Route exact path="/third" component={ThirdPage}/>
-      <Route exact path="/fourth" component={FourthPage}/>
+        <div className="App">
+          <header className="review-feedback-header">
+            <h1>Review Your Feedback!</h1>
+            <ul style={{ listStyleType: 'none' }}>
+
+              <li>Feelings: </li>
+              <li>Understanding: </li>
+              <li>Support: </li>
+              <li>Comments: </li>
+
+            </ul>
+          </header>
+        </div>
+
+        <Route exact path="/" component={FirstPage} />
+        <Route exact path="/second" component={SecondPage} />
+        <Route exact path="/third" component={ThirdPage} />
+        <Route exact path="/fourth" component={FourthPage} />
       </Router>
     );
   }
