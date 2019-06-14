@@ -7,7 +7,7 @@ import FirstPage from '../FirstPage/FirstPage';
 import SecondPage from '../SecondPage/SecondPage';
 import ThirdPage from '../ThirdPage/ThirdPage';
 import FourthPage from '../FourthPage/FourthPage';
-
+import ShowStatus from '../ShowStatus/ShowStatus';
 
 // NOTE TO SELF, CAN CREATE ONE CLICK AND ONE INPUT FUNCTION THAT CAN BE PASSED DOWN TO ALL MY COMPONENTS
 // DO THIS AFTER MAKING SURE IT ALL WORKS FIRST
@@ -43,20 +43,7 @@ class App extends Component {
         <Route exact path="/fourth" component={FourthPage} />
 
         {/* Review Feedback to show on lower part of page */}
-        <div className="App">
-          <header className="review-feedback-header">
-            <h1>Review Your Feedback!</h1>
-            <ul style={{ listStyleType: 'none' }}>
-
-              <li>Feelings: </li>
-              <li>Understanding: </li>
-              <li>Support: </li>
-              <li>Comments: </li>
-
-            </ul>
-            <button>Incomplete</button>
-          </header>
-        </div>
+      <ShowStatus />
 
       </Router>
     );
