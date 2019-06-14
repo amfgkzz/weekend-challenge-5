@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import { connect } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import FirstPage from '../FirstPage/FirstPage';
 import SecondPage from '../SecondPage/SecondPage';
@@ -61,4 +62,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapReduxToState = (reduxState) => ({
+  reduxState: reduxState,
+});
+
+export default connect(mapReduxToState)(App);
