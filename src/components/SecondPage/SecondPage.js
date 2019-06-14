@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class SecondPage extends Component {
 
-    handleClick = (event) => {
+    handleClickUnderstanding = (event) => {
         event.preventDefault();
         console.log('works also!');
     }
@@ -13,7 +13,7 @@ class SecondPage extends Component {
             <>
             <h1>HOW WELL ARE YOU UNDERSTANDING THE CONCEPTS?</h1>
             
-            <form onSubmit={this.handleClick}>
+            <form onSubmit={this.handleClickUnderstanding}>
             <input style={{width: 200}} placeholder="Understanding?"/>
             <button>Next</button>
             </form>
