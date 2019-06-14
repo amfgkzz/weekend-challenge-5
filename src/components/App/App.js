@@ -11,6 +11,8 @@ class App extends Component {
   render() {
     return (
       <Router>
+
+        {/* Header that will show on every page */}
         <div className="App">
           <header className="App-header">
             <h1 className="App-title">Feedback!</h1>
@@ -18,6 +20,7 @@ class App extends Component {
           </header>
           <br />
         </div>
+
         {/* FIX: To test the pages from DOM */}
         <Link to="/">Test First Page</Link>
         <br />
@@ -28,6 +31,13 @@ class App extends Component {
         <Link to="/fourth">Test Fourth Page</Link>
         <br />
 
+        {/* Route Paths to hit different pages */}
+        <Route exact path="/" component={FirstPage} />
+        <Route exact path="/second" component={SecondPage} />
+        <Route exact path="/third" component={ThirdPage} />
+        <Route exact path="/fourth" component={FourthPage} />
+
+        {/* Review Feedback to show on lower part of page */}
         <div className="App">
           <header className="review-feedback-header">
             <h1>Review Your Feedback!</h1>
@@ -42,10 +52,6 @@ class App extends Component {
           </header>
         </div>
 
-        <Route exact path="/" component={FirstPage} />
-        <Route exact path="/second" component={SecondPage} />
-        <Route exact path="/third" component={ThirdPage} />
-        <Route exact path="/fourth" component={FourthPage} />
       </Router>
     );
   }
