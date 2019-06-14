@@ -5,6 +5,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import FirstPage from '../FirstPage/FirstPage';
 import SecondPage from '../SecondPage/SecondPage';
 import ThirdPage from '../ThirdPage/ThirdPage';
+import FourthPage from '../FourthPage/FourthPage';
 
 class App extends Component {
   render() {
@@ -23,6 +24,8 @@ class App extends Component {
       <Link to="/second">Test Second Page</Link>
       <br/>
       <Link to="/third">Test Third Page</Link>
+      <br/>
+      <Link to="/fourth">Test Fourth Page</Link>
 
       <Route exact path="/" component={FirstPage}/>
       <Route exact path="/second" component={SecondPage}/>
