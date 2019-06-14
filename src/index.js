@@ -5,7 +5,7 @@ import App from './components/App/App';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 
-const feelingsReducer = (state = [], action) => {
+const feedbackReducer = (state = [], action) => {
     if (action.type === 'BUTTON_CLICKED') {
         console.log(action);
         console.log(state);
@@ -17,7 +17,7 @@ const feelingsReducer = (state = [], action) => {
 
 const storeMe = createStore(
     combineReducers({
-        feelingsReducer,
+        feedbackReducer,
     })
 );
 
