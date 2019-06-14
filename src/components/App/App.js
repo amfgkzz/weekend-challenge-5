@@ -7,6 +7,10 @@ import SecondPage from '../SecondPage/SecondPage';
 import ThirdPage from '../ThirdPage/ThirdPage';
 import FourthPage from '../FourthPage/FourthPage';
 
+
+// NOTE TO SELF, CAN CREATE ONE CLICK AND ONE INPUT FUNCTION THAT CAN BE PASSED DOWN TO ALL MY COMPONENTS
+// DO THIS AFTER MAKING SURE IT ALL WORKS FIRST
+
 class App extends Component {
   render() {
     return (

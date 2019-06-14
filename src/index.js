@@ -5,9 +5,18 @@ import App from './components/App/App';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 
-const storeMe = createStore(()=>{
-    console.log('hi');
-})
+const feelingsReducer = (state = [], action) => {
+    if (action.type === 'FEELINGS_BUTTON_CLICKED') {
+        return [...state, action.payload];
+    }
+    return state;
+}
+
+const storeMe = createStore(
+    combineReducers({
+        feelingsReducer,
+    })
+);
 
 ReactDOM.render(<Provider store={storeMe}><App /></Provider>, document.getElementById('root'));
 
