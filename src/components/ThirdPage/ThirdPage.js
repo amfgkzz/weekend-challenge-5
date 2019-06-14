@@ -1,26 +1,50 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 
 class ThirdPage extends Component {
 
-    handleClickSupport = (event) => {
+    state = {
+        support: ''
+    }
+
+    handleClick = (event) => {
         event.preventDefault();
-        console.log('this works too!');
+        this.setState({
+            support: this.state.support,
+        }, () => {
+            console.log(this.state.support);
+            this.props.dispatch({
+                type: 'BUTTON_CLICKED',
+                support: this.state.support,
+            })
+            this.setState({
+                support: '',
+            }, () => {
+                this.props.history.push('/fourth');
+            });
+        });
+    }
+
+    handleInput = (event) => {
+        this.setState({
+            support: event.target.value,
+        });
     }
 
     render() {
 
-        return(
+        return (
             <>
-            <h1>HOW WELL ARE YOU BEING SUPPORTED?</h1>
-            
-            <form onSubmit={this.handleClickSupport}>
-            <input style={{width: 200}} placeholder="Supported?"/>
-            <button>Next</button>
-            </form>
+                <h1>HOW WELL ARE YOU BEING SUPPORTED?</h1>
+
+                <form onSubmit={this.handleClick}>
+                    <input style={{ width: 200 }} value={this.state.support} onChange={this.handleInput} placeholder="Support?" />
+                    <button>Next</button>
+                </form>
 
             </>
         )
     }
 }
 
-export default ThirdPage;
+export default connect()(ThirdPage);

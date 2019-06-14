@@ -1,26 +1,48 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 
 class FourthPage extends Component {
 
-    handleClickComment = (event) => {
+    state = {
+        comments: ''
+    }
+
+    handleClick = (event) => {
         event.preventDefault();
-        console.log('EVERYTHING WORKS! FOR NOW!');
+        this.setState({
+            comments: this.state.comments,
+        }, () => {
+            console.log(this.state.comments);
+            this.props.dispatch({
+                type: 'BUTTON_CLICKED',
+                comments: this.state.comments,
+            })
+            this.setState({
+                comments: '',
+            });
+        });
+    }
+
+    handleInput = (event) => {
+        this.setState({
+            comments: event.target.value,
+        });
     }
 
     render() {
 
-        return(
+        return (
             <>
-            <h1>ANY COMMENTS YOU WANT TO LEAVE?</h1>
-            
-            <form onSubmit={this.handleClickComment}>
-            <input style={{width: 200}} placeholder="Comments?"/>
-            <button>Next</button>
-            </form>
+                <h1>ANY COMMENTS YOU WANT TO LEAVE?</h1>
+
+                <form onSubmit={this.handleClick}>
+                    <input style={{ width: 200 }} value={this.state.comments} onChange={this.handleInput} placeholder="Comments?" />
+                    <button>Next</button>
+                </form>
 
             </>
         )
     }
 }
 
-export default FourthPage;
+export default connect()(FourthPage);

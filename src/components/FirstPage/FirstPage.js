@@ -7,15 +7,15 @@ class FirstPage extends Component {
         feelings: ''
     }
 
-    handleClickFeelings = (event) => {
+    handleClick = (event) => {
         event.preventDefault();
         this.setState({
             feelings: this.state.feelings,
         }, () => {
             console.log(this.state.feelings);
             this.props.dispatch({
-                type: 'FEELINGS_BUTTON_CLICKED',
-                payload: this.state.feelings,
+                type: 'BUTTON_CLICKED',
+                feelings: this.state.feelings,
             })
             this.setState({
                 feelings: '',
@@ -25,7 +25,7 @@ class FirstPage extends Component {
         });
     }
 
-    handleInputFeelings = (event) => {
+    handleInput = (event) => {
         this.setState({
             feelings: event.target.value,
         });
@@ -40,8 +40,8 @@ class FirstPage extends Component {
                 </pre>
                 <h1>HOW ARE YOU FEELING TODAY?</h1>
 
-                <form onSubmit={this.handleClickFeelings}>
-                    <input style={{ width: 200 }} value={this.state.feelings} onChange={this.handleInputFeelings} placeholder="TYPE YOUR FEELINGS HERE!" />
+                <form onSubmit={this.handleClick}>
+                    <input style={{ width: 200 }} value={this.state.feelings} onChange={this.handleInput} placeholder="TYPE YOUR FEELINGS HERE!" />
                     <button>Next</button>
                 </form>
 

@@ -6,8 +6,11 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 
 const feelingsReducer = (state = [], action) => {
-    if (action.type === 'FEELINGS_BUTTON_CLICKED') {
-        return [...state, action.payload];
+    if (action.type === 'BUTTON_CLICKED') {
+        console.log(action);
+        console.log(state);
+        delete action.type;
+        return [...state, action];
     }
     return state;
 }
