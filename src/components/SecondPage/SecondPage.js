@@ -38,7 +38,7 @@ class SecondPage extends Component {
                 <h1>HOW WELL ARE YOU UNDERSTANDING THE CONCEPTS?</h1>
 
                 <form onSubmit={this.handleClick}>
-                    <input style={{ width: 200 }} value={this.state.understand} onChange={this.handleInput} placeholder="Understand?" />
+                    <input type="number" min="1" max="10" style={{ width: 209 }} value={this.state.understand} onChange={this.handleInput} placeholder="Rate your understanding from 1 to 10!" />
                     <button>Next</button>
                 </form>
 

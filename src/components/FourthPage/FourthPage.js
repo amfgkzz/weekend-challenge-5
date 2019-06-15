@@ -36,7 +36,7 @@ class FourthPage extends Component {
                 <h1>ANY COMMENTS YOU WANT TO LEAVE?</h1>
 
                 <form onSubmit={this.handleClick}>
-                    <input style={{ width: 200 }} value={this.state.comments} onChange={this.handleInput} placeholder="Comments?" />
+                    <input style={{ width: 209 }} value={this.state.comments} onChange={this.handleInput} placeholder="Comments?" />
                     <button>Next</button>
                 </form>
 

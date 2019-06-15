@@ -38,7 +38,7 @@ class ThirdPage extends Component {
                 <h1>HOW WELL ARE YOU BEING SUPPORTED?</h1>
 
                 <form onSubmit={this.handleClick}>
-                    <input style={{ width: 200 }} value={this.state.support} onChange={this.handleInput} placeholder="Support?" />
+                    <input type="number" min="1" max="10" style={{ width: 209 }} value={this.state.support} onChange={this.handleInput} placeholder="Rate your support between 1 to 10!" />
                     <button>Next</button>
                 </form>
 

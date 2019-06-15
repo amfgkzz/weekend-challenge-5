@@ -38,7 +38,7 @@ class FirstPage extends Component {
                 <h1>HOW ARE YOU FEELING TODAY?</h1>
 
                 <form onSubmit={this.handleClick}>
-                    <input style={{ width: 200 }} value={this.state.feelings} onChange={this.handleInput} placeholder="TYPE YOUR FEELINGS HERE!" />
+                    <input type="number" min="1" max="10" style={{ width: 209 }} value={this.state.feelings} onChange={this.handleInput} placeholder="Rate your feelings between 1 to 10!" />
                     <button>Next</button>
                 </form>
 
