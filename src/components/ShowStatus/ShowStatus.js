@@ -3,6 +3,22 @@ import { connect } from 'react-redux';
 
 class ShowStatus extends Component {
 
+    showIncomplete() {
+        return <button onClick={this.handleClickIncomplete} >Incomplete</button>;
+    }
+
+    showSubmit() {
+        return <button onClick={this.handleClickSubmit}>Submit</button>;
+    }
+
+    handleClickIncomplete = () => {
+        console.log('incomplete!');
+    }
+
+    handleClickSubmit = () => {
+        console.log('submit');
+    }
+
     render() {
         return (
             <>
@@ -17,7 +33,7 @@ class ShowStatus extends Component {
                             <li>Comments: {this.props.reduxState.feedbackReducer.length < 4 ? 0 : this.props.reduxState.feedbackReducer[3].comments}</li>
 
                         </ul>
-                        <button>{this.props.reduxState.feedbackReducer.length < 4 ? 'Incomplete' : 'Submit'}</button>
+                        {this.props.reduxState.feedbackReducer.length < 4 ? this.showIncomplete() : this.showSubmit()}
                     </header>
                 </div>
             </>

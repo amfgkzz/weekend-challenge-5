@@ -35,9 +35,6 @@ class FirstPage extends Component {
 
         return (
             <>
-                <pre>
-                    {JSON.stringify(this.props, null, 2)}
-                </pre>
                 <h1>HOW ARE YOU FEELING TODAY?</h1>
 
                 <form onSubmit={this.handleClick}>
