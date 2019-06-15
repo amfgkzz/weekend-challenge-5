@@ -4,15 +4,11 @@ import { connect } from 'react-redux';
 class ShowStatus extends Component {
 
     showIncomplete() {
-        return <button onClick={this.handleClickIncomplete} >Incomplete</button>;
+        return <button disabled>Incomplete</button>;
     }
 
     showSubmit() {
         return <button onClick={this.handleClickSubmit}>Submit</button>;
-    }
-
-    handleClickIncomplete = () => {
-        console.log('incomplete!');
     }
 
     handleClickSubmit = () => {
