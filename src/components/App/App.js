@@ -8,45 +8,53 @@ import SecondPage from '../SecondPage/SecondPage';
 import ThirdPage from '../ThirdPage/ThirdPage';
 import FourthPage from '../FourthPage/FourthPage';
 import ShowStatus from '../ShowStatus/ShowStatus';
+import ReviewPage from '../ReviewPage/ReviewPage';
 
 // NOTE TO SELF, CAN CREATE ONE CLICK AND ONE INPUT FUNCTION THAT CAN BE PASSED DOWN TO ALL MY COMPONENTS
 // DO THIS AFTER MAKING SURE IT ALL WORKS FIRST
 
 class App extends Component {
   render() {
-    return (
-      <Router>
+    // let test = this.props.reduxState.feedbackReducer;
+    // if (test) {
+    //   return (
+    //     <Router>
 
-        {/* Header that will show on every page */}
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Feedback!</h1>
-            <h4><i>Don't forget it!</i></h4>
-          </header>
-          <br />
-        </div>
+    //       {/* Header that will show on every page */}
+    //       <div className="App">
+    //         <header className="App-header">
+    //           <h1 className="App-title">Feedback!</h1>
+    //           <h4><i>Don't forget it!</i></h4>
+    //         </header>
+    //         <br />
+    //       </div>
 
-        {/* FIX: To test the pages from DOM */}
-        <Link to="/">Test First Page</Link>
-        <br />
-        <Link to="/second">Test Second Page</Link>
-        <br />
-        <Link to="/third">Test Third Page</Link>
-        <br />
-        <Link to="/fourth">Test Fourth Page</Link>
-        <br />
+    //       {/* FIX: To test the pages from DOM */}
+    //       <Link to="/">Test First Page</Link>
+    //       <br />
+    //       <Link to="/second">Test Second Page</Link>
+    //       <br />
+    //       <Link to="/third">Test Third Page</Link>
+    //       <br />
+    //       <Link to="/fourth">Test Fourth Page</Link>
+    //       <br />
 
-        {/* Route Paths to hit different pages */}
-        <Route exact path="/" component={FirstPage} />
-        <Route exact path="/second" component={SecondPage} />
-        <Route exact path="/third" component={ThirdPage} />
-        <Route exact path="/fourth" component={FourthPage} />
+    //       {/* Route Paths to hit different pages */}
+    //       <Route exact path="/" component={FirstPage} />
+    //       <Route exact path="/second" component={SecondPage} />
+    //       <Route exact path="/third" component={ThirdPage} />
+    //       <Route exact path="/fourth" component={FourthPage} />
 
-        {/* Review Feedback to show on lower part of page */}
-      <ShowStatus />
+    //       {/* Review Feedback to show on lower part of page */}
+    //       <ShowStatus />
 
-      </Router>
-    );
+    //     </Router>
+    //   )
+    // } else {
+      return (
+        <ReviewPage />
+      )
+    
   }
 }
 
