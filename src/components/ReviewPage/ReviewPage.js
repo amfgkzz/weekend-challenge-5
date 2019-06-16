@@ -12,10 +12,12 @@ class ReviewPage extends Component {
         return (
             <>
                 <header style={{ textAlign: 'center' }}>
+
                     <h1 >Thank You!</h1>
+
                 </header>
 
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
 
                     <button onClick={this.handleClick}>Leave New Feedback</button>
 
