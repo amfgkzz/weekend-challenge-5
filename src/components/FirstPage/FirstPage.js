@@ -10,11 +10,9 @@ class FirstPage extends Component {
 
     handleClick = (event) => {
         event.preventDefault();
-        console.log(this.props.history);
         this.setState({
             feelings: this.state.feelings,
         }, () => {
-            console.log(this.state.feelings);
             this.props.dispatch({
                 type: 'BUTTON_CLICKED',
                 feelings: this.state.feelings,

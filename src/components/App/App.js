@@ -7,7 +7,6 @@ import FirstPage from '../FirstPage/FirstPage';
 import SecondPage from '../SecondPage/SecondPage';
 import ThirdPage from '../ThirdPage/ThirdPage';
 import FourthPage from '../FourthPage/FourthPage';
-import ShowStatus from '../ShowStatus/ShowStatus';
 import ReviewPage from '../ReviewPage/ReviewPage';
 
 // NOTE TO SELF, CAN CREATE ONE CLICK AND ONE INPUT FUNCTION THAT CAN BE PASSED DOWN TO ALL MY COMPONENTS
@@ -45,15 +44,13 @@ class App extends Component {
           <Route exact path="/third" component={ThirdPage} />
           <Route exact path="/fourth" component={FourthPage} />
 
-          {/* Review Feedback to show on lower part of page */}
-
         </Router>
       )
     } else {
       return (
-        <Router>
-          <Route exact path="/" component={ReviewPage} />
-        </Router>
+
+        // Show this page when sending the feedback to database*
+        <ReviewPage />
       )
     }
   }

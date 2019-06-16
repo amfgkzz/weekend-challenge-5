@@ -13,7 +13,6 @@ class SecondPage extends Component {
         this.setState({
             understand: this.state.understand,
         }, () => {
-            console.log(this.state.understand);
             this.props.dispatch({
                 type: 'BUTTON_CLICKED',
                 understand: this.state.understand,

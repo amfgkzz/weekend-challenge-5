@@ -13,7 +13,6 @@ class ThirdPage extends Component {
         this.setState({
             support: this.state.support,
         }, () => {
-            console.log(this.state.support);
             this.props.dispatch({
                 type: 'BUTTON_CLICKED',
                 support: this.state.support,

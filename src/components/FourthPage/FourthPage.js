@@ -13,7 +13,6 @@ class FourthPage extends Component {
         this.setState({
             comments: this.state.comments,
         }, () => {
-            console.log(this.state.comments);
             this.props.dispatch({
                 type: 'BUTTON_CLICKED',
                 comments: this.state.comments,
