@@ -4,7 +4,10 @@ import { connect } from 'react-redux';
 class ReviewPage extends Component {
 
     handleClick = () => {
-        console.log('review!');
+        this.props.dispatch({
+            type: 'NEW_FEEDBACK',
+            payload: true,
+        });
     }
 
     render() {

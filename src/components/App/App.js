@@ -15,46 +15,47 @@ import ReviewPage from '../ReviewPage/ReviewPage';
 
 class App extends Component {
   render() {
-    // let test = this.props.reduxState.feedbackReducer;
-    // if (test) {
-    //   return (
-    //     <Router>
-
-    //       {/* Header that will show on every page */}
-    //       <div className="App">
-    //         <header className="App-header">
-    //           <h1 className="App-title">Feedback!</h1>
-    //           <h4><i>Don't forget it!</i></h4>
-    //         </header>
-    //         <br />
-    //       </div>
-
-    //       {/* FIX: To test the pages from DOM */}
-    //       <Link to="/">Test First Page</Link>
-    //       <br />
-    //       <Link to="/second">Test Second Page</Link>
-    //       <br />
-    //       <Link to="/third">Test Third Page</Link>
-    //       <br />
-    //       <Link to="/fourth">Test Fourth Page</Link>
-    //       <br />
-
-    //       {/* Route Paths to hit different pages */}
-    //       <Route exact path="/" component={FirstPage} />
-    //       <Route exact path="/second" component={SecondPage} />
-    //       <Route exact path="/third" component={ThirdPage} />
-    //       <Route exact path="/fourth" component={FourthPage} />
-
-    //       {/* Review Feedback to show on lower part of page */}
-    //       <ShowStatus />
-
-    //     </Router>
-    //   )
-    // } else {
+    let show = this.props.reduxState.reviewReducer;
+    if (show) {
       return (
-        <ReviewPage />
+        <Router>
+
+          {/* Header that will show on every page */}
+          <div className="App">
+            <header className="App-header">
+              <h1 className="App-title">Feedback!</h1>
+              <h4><i>Don't forget it!</i></h4>
+            </header>
+            <br />
+          </div>
+
+          {/* FIX: To test the pages from DOM */}
+          <Link to="/">Test First Page</Link>
+          <br />
+          <Link to="/second">Test Second Page</Link>
+          <br />
+          <Link to="/third">Test Third Page</Link>
+          <br />
+          <Link to="/fourth">Test Fourth Page</Link>
+          <br />
+
+          {/* Route Paths to hit different pages */}
+          <Route exact path="/" component={FirstPage} />
+          <Route exact path="/second" component={SecondPage} />
+          <Route exact path="/third" component={ThirdPage} />
+          <Route exact path="/fourth" component={FourthPage} />
+
+          {/* Review Feedback to show on lower part of page */}
+
+        </Router>
       )
-    
+    } else {
+      return (
+        <Router>
+          <Route exact path="/" component={ReviewPage} />
+        </Router>
+      )
+    }
   }
 }
 

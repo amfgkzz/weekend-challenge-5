@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import ShowStatus from '../ShowStatus/ShowStatus';
 import { connect } from 'react-redux';
 
 class FourthPage extends Component {
 
     state = {
-        comments: ''
+        comments: '',
     }
 
     handleClick = (event) => {
@@ -40,6 +41,7 @@ class FourthPage extends Component {
                     <button>Next</button>
                 </form>
 
+                <ShowStatus history={this.props.history}/>
             </>
         )
     }

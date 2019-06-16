@@ -13,6 +13,14 @@ class ShowStatus extends Component {
 
     handleClickSubmit = () => {
         console.log('submit');
+        this.props.dispatch({
+            type: 'CLEAR_FEEDBACK',
+        });
+        this.props.dispatch({
+            type: 'GO_TO_REVIEW',
+            payload: false,
+        });
+        this.props.history.push('/');
     }
 
     render() {

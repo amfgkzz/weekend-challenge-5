@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ShowStatus from '../ShowStatus/ShowStatus';
 import { connect } from 'react-redux';
 
 class SecondPage extends Component {
@@ -41,6 +42,8 @@ class SecondPage extends Component {
                     <input type="number" min="1" max="10" style={{ width: 209 }} value={this.state.understand} onChange={this.handleInput} placeholder="Rate your understanding from 1 to 10!" />
                     <button>Next</button>
                 </form>
+
+                <ShowStatus history={this.props.history}/>
 
             </>
         )

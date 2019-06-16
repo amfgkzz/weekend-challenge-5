@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ShowStatus from '../ShowStatus/ShowStatus';
 import { connect } from 'react-redux';
 
 class FirstPage extends Component {
@@ -9,6 +10,7 @@ class FirstPage extends Component {
 
     handleClick = (event) => {
         event.preventDefault();
+        console.log(this.props.history);
         this.setState({
             feelings: this.state.feelings,
         }, () => {
@@ -41,6 +43,8 @@ class FirstPage extends Component {
                     <input type="number" min="1" max="10" style={{ width: 209 }} value={this.state.feelings} onChange={this.handleInput} placeholder="Rate your feelings between 1 to 10!" />
                     <button>Next</button>
                 </form>
+
+                <ShowStatus history={this.props.history}/>
 
             </>
         )
