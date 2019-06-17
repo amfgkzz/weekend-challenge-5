@@ -13,15 +13,20 @@ class FirstPage extends Component {
         this.setState({
             feeling: this.state.feeling,
         }, () => {
-            this.props.dispatch({
-                type: 'BUTTON_CLICKED',
-                feeling: this.state.feeling,
-            })
-            this.setState({
-                feeling: '',
-            }, () => {
-                this.props.history.push('/second');
-            });
+            if (this.state.feeling === '') {
+                alert('YOU ARE REQUIRED TO TELL ME HOW YOU ARE FEELING OR ELSE!');
+            }
+            else {
+                this.props.dispatch({
+                    type: 'BUTTON_CLICKED',
+                    feeling: this.state.feeling,
+                })
+                this.setState({
+                    feeling: '',
+                }, () => {
+                    this.props.history.push('/second');
+                });
+            }
         });
     }
 
@@ -46,7 +51,7 @@ class FirstPage extends Component {
                     <input type="number" min="1" max="10" style={{ width: 209 }} value={this.state.feeling} onChange={this.handleInput} placeholder="Rate your feeling between 1 to 10!" />
 
                     <button>Next</button>
-                    
+
                 </form>
 
                 <ShowStatus history={this.props.history} />

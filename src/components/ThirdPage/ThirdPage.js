@@ -13,15 +13,20 @@ class ThirdPage extends Component {
         this.setState({
             support: this.state.support,
         }, () => {
-            this.props.dispatch({
-                type: 'BUTTON_CLICKED',
-                support: this.state.support,
-            })
-            this.setState({
-                support: '',
-            }, () => {
-                this.props.history.push('/fourth');
-            });
+            if (this.state.support === '') {
+                alert('AM I SUPPORTING YOU OR NOT?');
+            }
+            else {
+                this.props.dispatch({
+                    type: 'BUTTON_CLICKED',
+                    support: this.state.support,
+                })
+                this.setState({
+                    support: '',
+                }, () => {
+                    this.props.history.push('/fourth');
+                });
+            }
         });
     }
 

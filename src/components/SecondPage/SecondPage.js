@@ -13,15 +13,20 @@ class SecondPage extends Component {
         this.setState({
             understanding: this.state.understanding,
         }, () => {
-            this.props.dispatch({
-                type: 'BUTTON_CLICKED',
-                understanding: this.state.understanding,
-            })
-            this.setState({
-                understanding: '',
-            }, () => {
-                this.props.history.push('/third');
-            });
+            if (this.state.understanding === '') {
+                alert('TELL ME HOW WELL YOU ARE UNDERSTANDING OR ELSE!');
+            }
+            else {
+                this.props.dispatch({
+                    type: 'BUTTON_CLICKED',
+                    understanding: this.state.understanding,
+                })
+                this.setState({
+                    understanding: '',
+                }, () => {
+                    this.props.history.push('/third');
+                });
+            }
         });
     }
 

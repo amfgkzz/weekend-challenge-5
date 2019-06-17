@@ -25,7 +25,7 @@ class ShowStatus extends Component {
     postData = (update) => {
         axios({
             method: 'POST',
-            url: '/admin',
+            url: '/feedbackdata',
             data: update,
         }).then(() => {
             this.props.dispatch({

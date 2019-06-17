@@ -13,13 +13,18 @@ class FourthPage extends Component {
         this.setState({
             comments: this.state.comments,
         }, () => {
-            this.props.dispatch({
-                type: 'BUTTON_CLICKED',
-                comments: this.state.comments,
-            })
-            this.setState({
-                comments: '',
-            });
+            if (this.state.comments === '') {
+                alert('LEAVE A COMMENT OR ELSE!');
+            }
+            else {
+                this.props.dispatch({
+                    type: 'BUTTON_CLICKED',
+                    comments: this.state.comments,
+                });
+                this.setState({
+                    comments: '',
+                });
+            }
         });
     }
 
@@ -42,7 +47,7 @@ class FourthPage extends Component {
                 <form style={{ display: 'flex', justifyContent: 'center' }} onSubmit={this.handleClick}>
 
                     <input style={{ width: 209 }} value={this.state.comments} onChange={this.handleInput} placeholder="Comments?" />
-                    
+
                     <button>Next</button>
 
                 </form>
