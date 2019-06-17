@@ -35,14 +35,21 @@ class ThirdPage extends Component {
 
         return (
             <>
-                <h1>HOW WELL ARE YOU BEING SUPPORTED?</h1>
+                <header style={{ textAlign: 'center' }}>
 
-                <form onSubmit={this.handleClick}>
+                    <h1>HOW WELL ARE YOU BEING SUPPORTED?</h1>
+
+                </header>
+
+                <form style={{ display: 'flex', justifyContent: 'center' }} onSubmit={this.handleClick}>
+
                     <input type="number" min="1" max="10" style={{ width: 209 }} value={this.state.support} onChange={this.handleInput} placeholder="Rate your support between 1 to 10!" />
+
                     <button>Next</button>
+                    
                 </form>
 
-                <ShowStatus history={this.props.history}/>
+                <ShowStatus history={this.props.history} />
 
             </>
         )

@@ -5,20 +5,20 @@ import { connect } from 'react-redux';
 class FirstPage extends Component {
 
     state = {
-        feelings: ''
+        feeling: ''
     }
 
     handleClick = (event) => {
         event.preventDefault();
         this.setState({
-            feelings: this.state.feelings,
+            feeling: this.state.feeling,
         }, () => {
             this.props.dispatch({
                 type: 'BUTTON_CLICKED',
-                feelings: this.state.feelings,
+                feeling: this.state.feeling,
             })
             this.setState({
-                feelings: '',
+                feeling: '',
             }, () => {
                 this.props.history.push('/second');
             });
@@ -27,7 +27,7 @@ class FirstPage extends Component {
 
     handleInput = (event) => {
         this.setState({
-            feelings: event.target.value,
+            feeling: event.target.value,
         });
     }
 
@@ -35,14 +35,21 @@ class FirstPage extends Component {
 
         return (
             <>
-                <h1>HOW ARE YOU FEELING TODAY?</h1>
+                <header style={{ textAlign: 'center' }}>
 
-                <form onSubmit={this.handleClick}>
-                    <input type="number" min="1" max="10" style={{ width: 209 }} value={this.state.feelings} onChange={this.handleInput} placeholder="Rate your feelings between 1 to 10!" />
+                    <h1>HOW ARE YOU FEELING TODAY?</h1>
+
+                </header>
+
+                <form style={{ display: 'flex', justifyContent: 'center' }} onSubmit={this.handleClick}>
+
+                    <input type="number" min="1" max="10" style={{ width: 209 }} value={this.state.feeling} onChange={this.handleInput} placeholder="Rate your feeling between 1 to 10!" />
+
                     <button>Next</button>
+                    
                 </form>
 
-                <ShowStatus history={this.props.history}/>
+                <ShowStatus history={this.props.history} />
 
             </>
         )

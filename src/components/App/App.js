@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import FirstPage from '../FirstPage/FirstPage';
 import SecondPage from '../SecondPage/SecondPage';
 import ThirdPage from '../ThirdPage/ThirdPage';
@@ -21,22 +20,16 @@ class App extends Component {
 
           {/* Header that will show on every page */}
           <div className="App">
+
             <header className="App-header">
+
               <h1 className="App-title">Feedback!</h1>
               <h4><i>Don't forget it!</i></h4>
+              
             </header>
             <br />
-          </div>
 
-          {/* FIX: To test the pages from DOM */}
-          <Link to="/">Test First Page</Link>
-          <br />
-          <Link to="/second">Test Second Page</Link>
-          <br />
-          <Link to="/third">Test Third Page</Link>
-          <br />
-          <Link to="/fourth">Test Fourth Page</Link>
-          <br />
+          </div>
 
           {/* Route Paths to hit different pages */}
           <Route exact path="/" component={FirstPage} />

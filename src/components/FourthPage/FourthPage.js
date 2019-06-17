@@ -33,14 +33,21 @@ class FourthPage extends Component {
 
         return (
             <>
-                <h1>ANY COMMENTS YOU WANT TO LEAVE?</h1>
+                <header style={{ textAlign: 'center' }}>
 
-                <form onSubmit={this.handleClick}>
+                    <h1>ANY COMMENTS YOU WANT TO LEAVE?</h1>
+
+                </header>
+
+                <form style={{ display: 'flex', justifyContent: 'center' }} onSubmit={this.handleClick}>
+
                     <input style={{ width: 209 }} value={this.state.comments} onChange={this.handleInput} placeholder="Comments?" />
+                    
                     <button>Next</button>
+
                 </form>
 
-                <ShowStatus history={this.props.history}/>
+                <ShowStatus history={this.props.history} />
             </>
         )
     }
