@@ -4,30 +4,43 @@ import axios from 'axios';
 
 class ShowStatus extends Component {
 
+    // this function will run on load, determines what button to show on DOM
     showIncomplete() {
         return <button disabled>Incomplete</button>;
     }
 
+    // this function will run on load, determines what button to show on DOM
     showSubmit() {
         return <button onClick={this.handleClickSubmit}>Submit</button>;
     }
 
+    // this function will run on button click
     handleClickSubmit = () => {
+        // created a variable to shorten reduxState; easier to reuse
         const feedback = this.props.reduxState.feedbackReducer;
+        // created a new variable object
         let newData = {};
+        // this forLoop will go through each object in that reduxState array
         for (let i = 0; i < feedback.length; i++) {
+            // created a variable for each object in that reduxState array
             const element = feedback[i];
+            // combined all the objects in the reduxState array and store it in newData object
             Object.assign(newData, element);
         }
+        // will return a function taking in newData object
         return this.postData(newData);
     }
 
+    // this function will run AFTER handClickSubmit
     postData = (update) => {
+        // runs an axios call that will send the newData object to the server
         axios({
             method: 'POST',
             url: '/feedbackdata',
             data: update,
+            // after sending the data, run a new function
         }).then(() => {
+            // this function will send TWO dispatches to reduxState
             this.props.dispatch({
                 type: 'CLEAR_FEEDBACK',
             });
@@ -35,6 +48,7 @@ class ShowStatus extends Component {
                 type: 'GO_TO_REVIEW',
                 payload: false,
             });
+            // then it will move the user to the first page
             this.props.history.push('/');
         });
     }
@@ -60,7 +74,7 @@ class ShowStatus extends Component {
                         {this.props.reduxState.feedbackReducer.length < 4 ? this.showIncomplete() : this.showSubmit()}
 
                     </header>
-                    
+
                 </div>
             </>
         )

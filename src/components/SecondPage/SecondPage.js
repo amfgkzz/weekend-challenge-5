@@ -8,24 +8,32 @@ class SecondPage extends Component {
         understanding: ''
     }
 
+    // function that runs on button click
     handleClick = (event) => {
+        // function that prevents page from refreshing
         event.preventDefault();
+        // will set state to whatever is in the input
         this.setState({
             understanding: this.state.understanding,
+            // run a function AFTER setting state
         }, () => {
+            // check to see if input is blank, if blank alert user
             if (this.state.understanding === '') {
                 alert('TELL ME HOW WELL YOU ARE UNDERSTANDING OR ELSE!');
             }
+            // if input isn't blank, dispatch to reduxState and send state object
             else {
                 this.props.dispatch({
                     type: 'BUTTON_CLICKED',
                     understanding: this.state.understanding,
                 });
+                // after dispatch, move user on to third page
                 this.props.history.push('/third');
             }
         });
     }
 
+    // function that takes in value of input
     handleInput = (event) => {
         this.setState({
             understanding: event.target.value,

@@ -10,6 +10,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
+
+// this is the route where all the feedback data is stored
 app.post('/feedbackdata', (req, res) => {
 
     pool.query(`INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")

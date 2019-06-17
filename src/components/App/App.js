@@ -10,6 +10,8 @@ import ReviewPage from '../ReviewPage/ReviewPage';
 
 class App extends Component {
   render() {
+    // Added in this variable, to switch what page to render depending on
+    // if the feedback was submitted or not
     let show = this.props.reduxState.reviewReducer;
     if (show) {
       return (

@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 
 class ReviewPage extends Component {
 
+    // function that runs on button click
     handleClick = () => {
+        // will dispatch to reduxState a boolean
         this.props.dispatch({
             type: 'NEW_FEEDBACK',
             payload: true,

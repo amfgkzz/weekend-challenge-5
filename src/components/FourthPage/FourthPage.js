@@ -8,19 +8,26 @@ class FourthPage extends Component {
         comments: '',
     }
 
+    // function that runs on button click
     handleClick = (event) => {
+        // function that prevents page from refreshing
         event.preventDefault();
+        // will set state to whatever is in the input
         this.setState({
             comments: this.state.comments,
+            // run a function AFTER setting state
         }, () => {
+            // check to see if input is blank, if blank alert user
             if (this.state.comments === '') {
                 alert('LEAVE A COMMENT OR ELSE!');
             }
+            // if input isn't blank, dispatch to reduxState and send state object
             else {
                 this.props.dispatch({
                     type: 'BUTTON_CLICKED',
                     comments: this.state.comments,
                 });
+                // after dispatch, clear user input
                 this.setState({
                     comments: '',
                 });
@@ -28,6 +35,7 @@ class FourthPage extends Component {
         });
     }
 
+    // function that takes in value of input
     handleInput = (event) => {
         this.setState({
             comments: event.target.value,
