@@ -20,12 +20,8 @@ class SecondPage extends Component {
                 this.props.dispatch({
                     type: 'BUTTON_CLICKED',
                     understanding: this.state.understanding,
-                })
-                this.setState({
-                    understanding: '',
-                }, () => {
-                    this.props.history.push('/third');
                 });
+                this.props.history.push('/third');
             }
         });
     }
@@ -51,7 +47,7 @@ class SecondPage extends Component {
                     <input type="number" min="1" max="10" style={{ width: 209 }} value={this.state.understanding} onChange={this.handleInput} placeholder="Rate your understanding from 1 to 10!" />
 
                     <button>Next</button>
-                    
+
                 </form>
 
                 <ShowStatus history={this.props.history} />

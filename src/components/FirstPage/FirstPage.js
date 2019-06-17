@@ -20,12 +20,8 @@ class FirstPage extends Component {
                 this.props.dispatch({
                     type: 'BUTTON_CLICKED',
                     feeling: this.state.feeling,
-                })
-                this.setState({
-                    feeling: '',
-                }, () => {
-                    this.props.history.push('/second');
                 });
+                this.props.history.push('/second');
             }
         });
     }

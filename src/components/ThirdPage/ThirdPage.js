@@ -20,12 +20,8 @@ class ThirdPage extends Component {
                 this.props.dispatch({
                     type: 'BUTTON_CLICKED',
                     support: this.state.support,
-                })
-                this.setState({
-                    support: '',
-                }, () => {
-                    this.props.history.push('/fourth');
                 });
+                    this.props.history.push('/fourth');
             }
         });
     }
